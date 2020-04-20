@@ -1,0 +1,104 @@
+# Hans-Petter Fjeld - 2020-04-19 - Apache License 2.0
+
+# 2020-04-19 - Ling Fluent language course, in Norwegian - spamples/hp-lingfluent.msg - spamples/hp-lingfluent2.msg
+
+header          __HP_LING1              Received =~ /sendfour\.de|sixpg-mail04\.de|presenttenses\.com/i
+header          __HP_LING2              From:addr =~ /ninesend\.com|presenttenses\.com/i
+body            __HP_LING3              /Ling Fluent/i
+body            __HP_LING4              /BETTER INFORMATION GROUP LTD/i
+body            __HP_LING5              /Great Ancoats Street Manchester M4/i
+body            __HP_LING6              /Cheawchan Nuban/i
+body            __HP_LING7              /informationgroup\.co\.uk/i
+
+
+meta            HP_LINGFLUENT           (__HP_LING1 + __HP_LING2 + __HP_LING3 + __HP_LING4 + __HP_LING5 + __HP_LING6 + __HP_LING7 >= 1)
+describe        HP_LINGFLUENT           Ling Fluent spam
+score           HP_LINGFLUENT           3.0
+
+# 2020-04-19 - CHATBATE kinky spam, in Norwegian - spamples/hp-chatbate.msg
+
+body            __HP_CHATBATE1          /chatwrbate\.online/i
+header          __HP_CHATBATE2          Subject =~ /kinky med meg/i
+
+meta            HP_CHATBATE             (__HP_CHATBATE1 + __HP_CHATBATE2 >= 1)
+describe        HP_CHATBATE             Kinky Chatwrbate spam
+score           HP_CHATBATE             5.0
+
+# 2020-04-20 - Dating page spam, in Norwegian - spamples/hp-visang.msg
+
+header          HP_UNDISCLOSED          To =~ /undisclosed-recipients/i
+describe        HP_UNDISCLOSED          The mail is not sent to me.
+score           HP_UNDISCLOSED          2
+
+header          HP_DATING               Subject =~ /dating/i
+describe        HP_DATING               Dating in subject
+score           HP_DATING               2
+
+body            HP_FLIRTCHATME          /flirtchatme\.no/i
+describe        HP_FLIRTCHATME          Link to a dating-site
+score           HP_FLIRTCHATME          2
+
+header          __HP_VISANG1            Received =~ /visang.com|178.176.174.8/i
+header          __HP_VISANG2            From:addr =~ /dogmail.com|visang.com/i
+
+meta            HP_VISANG               (__HP_VISANG1 + __HP_VISANG2 >= 1)
+describe        HP_VISANG               Spam from Visang
+score           HP_VISANG               3
+
+# 2020-04-21 - Slanking, investering og bokklubben
+
+header          __HP_PDP1               Received =~ /pdp-10\.com/i
+header          __HP_PDP2               Return-Path =~ /\@pdp-10\.com/i
+header          __HP_PDP3               Reply-To =~ /\@pdp-10\.com/i
+header          __HP_PDP4               From =~ /\@pdp-10\.com/i
+body            __HP_PDP5               /pdp-10\.com/i
+
+meta            HP_PDP                  (__HP_PDP1 + __HP_PDP2 + __HP_PDP3 + __HP_PDP4 + __HP_PDP5 >= 1)
+describe        HP_PDP                  PDP-10 email marketer
+score           HP_PDP                  5
+
+header          __HP_SLANKING1          Subject =~ /slankeformel/i
+header          __HP_SLANKING2          From =~ /slankeformel/i
+body            __HP_SLANKING3          /redufim|redufim block \& burn|velkomst(gave|pakke)|bli kvitt overvekt|forbrenne fett|\d dager helt gratis|til en verdi av|slankeformel/i
+
+meta            HP_SLANKING             (__HP_SLANKING1 + __HP_SLANKING2 + __HP_SLANKING3 >= 1)
+describe        HP_SLANKING             Slanking-prat
+score           HP_SLANKING             3
+
+header          __HP_VISION1            Return-Path =~ /\@visionforthenewevangelization\.com/i
+header          __HP_VISION2            Received =~     /\@visionforthenewevangelization\.com/i
+header          __HP_VISION3            X-Sender =~ /\@visionforthenewevangelization\.com/i
+header          __HP_VISION4            From =~ /\@visionforthenewevangelization\.com/i
+body            __HP_VISION5            /visionforthenewevangelization/i
+
+meta            HP_VISION               (__HP_VISION1 + __HP_VISION2 + __HP_VISION3 + __HP_VISION4 + __HP_VISION5 >= 1)
+describe        HP_VISION               Spam-sender visionforthenewevangelization
+score           HP_VISION               5
+
+header          __HP_INVEST1            Subject =~ /hemmelige investeringer/i
+body            __HP_INVEST2            /hemmelige investeringer|bli rike|online handelsplattform|tjene penger konstant/i
+body            __HP_INVEST3            /du kan tjene|du motta en samtale fra oss/i
+body            __HP_INVEST4            /invester og begynn <C3><A5> tjene/i
+
+meta            HP_INVEST               (__HP_INVEST1 + __HP_INVEST2 + __HP_INVEST3 + __HP_INVEST4 >= 1)
+describe        HP_INVEST               Investerings-prat
+score           HP_INVEST               3
+
+header          __HP_FAYETTE1           Return-Path =~ /\@fayettefarmbureau\.com/i
+header          __HP_FAYETTE2           Received =~  /\@fayettefarmbureau\.com/i
+header          __HP_FAYETTE3           From =~ /\@fayettefarmbureau\.com/i
+header          __HP_FAYETTE4           List-Unsubscribe =~ /\@fayettefarmbureau\.com/i
+body            __HP_FAYETTE5           /fayettefarmbureau\.com/i
+
+meta            HP_FAYETTE              (__HP_FAYETTE1 + __HP_FAYETTE2 + __HP_FAYETTE3 + __HP_FAYETTE4 + __HP_FAYETTE5 >= 1)
+describe        HP_FAYETTE              fayettefarmbureau spam-sender
+score           HP_FAYETTE              5
+
+header          __HP_BOKKLUBBEN1        Subject =~ /F<C3><A5>.*gratis\! \(verdi \d/i
+body            __HP_BOKKLUBBEN2        /pris.*din pris: 0/i
+body            __HP_BOKKLUBBEN3        /siste sjanse|bli medlem av|ingen krav til kj<C3><B8>p utover|velkomspakke/i
+body            __HP_BOKKLUBBEN4        /bestill din velkomspakke i dag/i
+
+meta            HP_BOKKLUBBEN           (__HP_BOKKLUBBEN1 + __HP_BOKKLUBBEN2 + __HP_BOKKLUBBEN3 + __HP_BOKKLUBBEN4 >= 1)
+describe        HP_BOKKLUBBEN           Bokklubben-salgspitch
+score           HP_BOKKLUBBEN           4
