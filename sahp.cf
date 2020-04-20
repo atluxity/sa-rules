@@ -66,7 +66,7 @@ describe        HP_SLANKING             Slanking-prat
 score           HP_SLANKING             3
 
 header          __HP_VISION1            Return-Path =~ /\@visionforthenewevangelization\.com/i
-header          __HP_VISION2            Received =~     /\@visionforthenewevangelization\.com/i
+header          __HP_VISION2            Received =~ /\@visionforthenewevangelization\.com/i
 header          __HP_VISION3            X-Sender =~ /\@visionforthenewevangelization\.com/i
 header          __HP_VISION4            From =~ /\@visionforthenewevangelization\.com/i
 body            __HP_VISION5            /visionforthenewevangelization/i
@@ -78,7 +78,7 @@ score           HP_VISION               5
 header          __HP_INVEST1            Subject =~ /hemmelige investeringer/i
 body            __HP_INVEST2            /hemmelige investeringer|bli rike|online handelsplattform|tjene penger konstant/i
 body            __HP_INVEST3            /du kan tjene|du motta en samtale fra oss/i
-body            __HP_INVEST4            /invester og begynn <C3><A5> tjene/i
+body            __HP_INVEST4            /invester og begynn å tjene/i
 
 meta            HP_INVEST               (__HP_INVEST1 + __HP_INVEST2 + __HP_INVEST3 + __HP_INVEST4 >= 1)
 describe        HP_INVEST               Investerings-prat
@@ -94,9 +94,9 @@ meta            HP_FAYETTE              (__HP_FAYETTE1 + __HP_FAYETTE2 + __HP_FA
 describe        HP_FAYETTE              fayettefarmbureau spam-sender
 score           HP_FAYETTE              5
 
-header          __HP_BOKKLUBBEN1        Subject =~ /F<C3><A5>.*gratis\! \(verdi \d/i
+header          __HP_BOKKLUBBEN1        Subject =~ /Få.*gratis\! \(verdi \d/i
 body            __HP_BOKKLUBBEN2        /pris.*din pris: 0/i
-body            __HP_BOKKLUBBEN3        /siste sjanse|bli medlem av|ingen krav til kj<C3><B8>p utover|velkomspakke/i
+body            __HP_BOKKLUBBEN3        /siste sjanse|bli medlem av|ingen krav til kjøp utover|velkomspakke/i
 body            __HP_BOKKLUBBEN4        /bestill din velkomspakke i dag/i
 
 meta            HP_BOKKLUBBEN           (__HP_BOKKLUBBEN1 + __HP_BOKKLUBBEN2 + __HP_BOKKLUBBEN3 + __HP_BOKKLUBBEN4 >= 1)
